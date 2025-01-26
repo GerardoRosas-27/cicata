@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog De Matemáticas</title>
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <section class="header-transparencia">
+        <div class="contenedor">
+          <div class="barra">
+            <a class="logo" href="abscisas1.html">
+              <h1 class="logo__nombre no-margin centrar-texto">
+                Blog<span class="logo__bold">DeMatemáticas</span>
+              </h1>
+            </a>
+
+            <nav class="navegacion">
+              <a href="nosotros.html" class="navegacion__enlace">Nosotros</a>
+              <a href="desafios.html" class="navegacion__enlace">Desafios</a>
+              <a href="contacto.html" class="navegacion__enlace">Contacto</a>
+            </nav>
+          </div>
+        </div>
+
+        <div class="header__texto">
+          <h2 class="no-margin">
+            "CICATA"
+          </h2>
+          <h4 class="no-margin">Facultad de Ciencias, UNAM</h4>
+          <p class="no-margin">© Dr. Gabriel Herrera</p>
+        </div>
+      </section>
+    </header>
+
+    <br />
+
+    <div class="contenedor contenido-principal">
+      <main class="blog">
+        <article class="entrada">
+          <h3 class="no-margin">Actividad. Intervalos de monotonía</h3>
+
+          <br />
+
+          <p class="no-margin cortartext">
+            \( \text{El propósito de este ejercicio es que puedas identificar
+            los intervalos donde la función es decreciente.} \)
+          </p>
+
+          <p>
+            <b
+              >Mueve los deslizadores de tal modo que indiques los trozos de la
+              gráfica donde la función es estrictamente decreciente.</b
+            >
+          </p>
+
+          <br />
+
+          <section class="contenedor2">
+            <!--   <hr>   -->
+
+            <h3 class="centrar-texto">Intervalos de monotonía</h3>
+
+            <div id="box" style="width: 600px; height: 400px"></div>
+
+            <br />
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/1.2.0/jsxgraphcore.js"></script>
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+            <script src="js/abscisas1.js"></script>
+
+            
+
+            <br />
+
+            <div class="button-container">
+              <button
+                class="modern-button modern-button:hover"
+                onclick="validar()"
+              >
+                Validar
+              </button>
+
+              <a
+                class="modern-button modern-button:hover modern-button-a"
+                href="./abscisas1.html"
+              >
+                <span>Reinicio</span>
+              </a>
+            </div>
+          </section>
+
+          <br />
+          <p></p>
+
+          <a href="tvm.html" class="boton boton--primario"
+            >Teorema del valor medio</a
+          >
+        </article>
+      </main>
+
+      <aside class="sidebar">
+        <h3>Un poco de teoría</h3>
+
+        <ul class="cursos no-padding">
+          <li class="widget-curso">
+            <h4 class="no-margin">Funciones monótonas</h4>
+            <p class="widget-curso__label">
+              Definición 1.
+              <span class="widget-curso__info"
+                >Una función es creciente en un intervalo \( I, \) \(
+                \text{si}\) \( x_{1} \lt x_{2} \) \( \text{entonces} \) \(
+                f(x_{1}) \le f(x_{2}) \)
+              </span>
+            </p>
+
+            <p class="widget-curso__label">
+              Definición 2.
+              <span class="widget-curso__info"
+                >Una función es decreciente en un intervalo \( I, \) \(
+                \text{si}\) \( x_{1} \lt x_{2} \) \( \text{entonces} \) \(
+                f(x_{1}) \ge f(x_{2}) \)
+              </span>
+            </p>
+
+            <p class="widget-curso__label">
+              Definición 3.
+              <span class="widget-curso__info"
+                >Una función es estrictamente creciente en un intervalo \( I, \)
+                \( \text{si}\) \( x_{1} \lt x_{2} \) \( \text{entonces} \) \(
+                f(x_{1}) \lt f(x_{2}) \)
+              </span>
+            </p>
+
+            <p class="widget-curso__label">
+              Definición 4.
+              <span class="widget-curso__info"
+                >Una función es estrictamente decreciente en un intervalo \( I,
+                \) \( \text{si}\) \( x_{1} \lt x_{2} \) \( \text{entonces} \) \(
+                f(x_{1}) \gt f(x_{2}) \)
+              </span>
+            </p>
+
+            <!--  <a href="entrada.html" class="boton boton--secundario">Más Información sobre nuestros cursos</a>  -->
+          </li>
+        </ul>
+        <div class="contentbutton">
+          <a href="#" class="modern-button">Consulta la teoría completa</a>
+        </div>
+      </aside>
+    </div>
+
+    <footer class="footer">
+      <div class="contenedor">
+        <div class="barra">
+          <a class="logo" href="index.html">
+            <h1 class="logo__nombre no-margin centrar-texto">
+              Blog<span class="logo__bold">DeMatemáticas</span>
+            </h1>
+          </a>
+
+          <nav class="navegacion">
+            <a href="nosotros.html" class="navegacion__enlace">Nosotros</a>
+            <a href="desafios.html" class="navegacion__enlace">Desafios</a>
+            <a href="contacto.html" class="navegacion__enlace">Contacto</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/modernizr.js"></script>
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath:  [['$','$'],['\\(','\\)']]}});
+    </script>
+
+    <script src="js/jquery.2.2.4.js"></script>
+
+    <script
+      id="MathJax-script"
+      async=""
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cuestionarioMovil.css">
+    <title>Cuestionario móvil</title>
+</head>
+
+<body>
+
+    <h1 class="title-center"> Actividad Leyes de Morgan </h1>
+
+
+    <h1> Leyes de Morgan </h1>
+
+    <p> Las leyes de De Morgan son dos postulados sobre la interacción entre los conjuntos. Estas leyes registran
+        antecedentes en Aristóteles y en William de Ockham. Augustus De Morgan vivió entre 1806 y 1871 y fue el primero
+        en incluir las leyes que postuló en la estructura formal de la lógica matemática.</p>
+    <h4>Actividad</h4>
+    <p>En la siguiente seccion se muestra la demostración de la primera ley de Morgan. ¿Puedes ponerla en oreden? </p>
+
+    <p>$(A \cup B)^c= A^c \cap B^c$
+    </p>
+    <h4>Demostración</h4>
+    <hr>
+    <div class="custom-card">
+
+        <ul class="uno" id="list2">
+
+        </ul>
+
+        <ul class="dos" id="list">
+
+        </ul>
+    </div>
+
+    <br>
+
+    <button class="btn" onclick="verificarLista()">Verificar </button>
+
+    <a href="./cuestionario4.html">Reinincio</a>
+
+
+    <!-- Libreria mover listas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"
+        integrity="sha512-Eezs+g9Lq4TCCq0wae01s9PuNWzHYoCMkE97e2qdkYthpI0pzC3UGB03lgEHn2XM85hDOUF6qgqqszs+iXU4UA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!--Libreria de alertas-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
+    <script src="./js2/jquery.2.2.4.js"></script>
+
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    <script
+        type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath:  [['$','$'],['\\(','\\)']]}});</script>
+
+
+    <script>
+
+        let arrayForm = [
+            { 'disabled': false, 'id': '1', 'value': "(1) Sea x un elemento arbitrario del conjunto universal $U$. Entonces: $x \\in (A \\cup B)^c \\Leftrightarrow x \\notin (A \\cup B)$" },
+            { 'disabled': false, 'id': '2', 'value': '(2) $\\Leftrightarrow (x \\in A^c) \\land (x \\in B^c) $$x \\in (A^c \\cap B^c)$' },
+            { 'disabled': false, 'id': '3', 'value': '(3) $\\Leftrightarrow \\urcorner [x \\in (A \\cup B)]$$\\Leftrightarrow \\urcorner [(x \\in A) \\lor (x \\in B)] $' },
+            { 'disabled': false, 'id': '4', 'value': '(4) Y al ser x un elemento arbitrario de $U$. Entonces: $\\forall x [x \\in (A \\cup B^c) ]$$\\Leftrightarrow x \\in (A^c \\cap B^c)$Por lo que $(A \\cup B)^c= (A^c\\cap B^c)$' },
+            { 'disabled': false, 'id': '5', 'value': '(5) $\\urcorner (x \\in A) \\land \\urcorner (x \\in B)$$(x \\notin A) \\land (x \\notin B)$' }
+
+        ];
+        let arrayForm2 = [
+            { 'disabled': false, 'id': 'A', 'value': "pregunta 1" },
+            { 'disabled': false, 'id': 'B', 'value': "pregunta 2" },
+            { 'disabled': false, 'id': 'C', 'value': "pregunta 3" },
+            { 'disabled': false, 'id': 'D', 'value': "pregunta 4" },
+            { 'disabled': false, 'id': 'E', 'value': "pregunta 5" }
+
+        ];
+
+        let arraTemporal = [...arrayForm, ...arrayForm2];
+        arraTemporal = _.shuffle(arraTemporal);
+      
+
+        const middleIndex = Math.ceil(arraTemporal.length / 2);
+        arrayForm = arraTemporal.splice(0, middleIndex);
+        arrayForm2 = arraTemporal.splice(-middleIndex);
+
+        function htmlForm() {
+            let datahtml = ''
+            arrayForm.map(item => {
+                if (item.disabled) {
+                    datahtml = datahtml + '<li style="background: rgb(255, 58, 58)" class="filtered" data-id="' + item.id + '">' + item.value + '</li>';
+                } else {
+                    datahtml = datahtml + '<li data-id="' + item.id + '">' + item.value + '</li>';
+                }
+            })
+
+            let datahtml2 = ''
+            arrayForm2.map(item => {
+                if (item.disabled) {
+                    datahtml2 = datahtml2 + '<li style="background: rgb(255, 58, 58)" class="filtered" data-id="' + item.id + '">' + item.value + '</li>';
+                } else {
+                    datahtml2 = datahtml2 + '<li data-id="' + item.id + '">' + item.value + '</li>';
+                }
+            })
+
+            $('#list').html(datahtml);
+            $('#list2').html(datahtml2);
+
+        }
+
+        htmlForm();
+
+        let arrayOpcionesCorrectas = ['1', '2', '3', '4', '5'];
+        let arrayOpcionesCorrectas2 = ['A', 'B', 'C', 'D', 'E'];
+
+
+        let arrayErrores = [];
+
+
+        function verificarLista() {
+
+            //let array_list = Array.from($('#list'))
+            let lista = $('#list').children();
+            let lista2 = $('#list2').children();
+            if (arrayOpcionesCorrectas.length === lista.length) {
+
+
+
+                arrayVerdaderos = [];
+                arrayVerdaderos2 = [];
+
+                for (let index = 0; index < arrayOpcionesCorrectas.length; index++) {
+                    const respuesta = arrayOpcionesCorrectas[index];
+                    const evaluarLista = lista[index]
+
+                    let valorDataId = parseFloat($(evaluarLista).data('id'))
+
+                    if (parseFloat(respuesta) === valorDataId) {
+                        arrayVerdaderos.push(respuesta);
+                    }
+
+                }
+                for (let index = 0; index < arrayOpcionesCorrectas2.length; index++) {
+                    const respuesta = arrayOpcionesCorrectas2[index];
+                    const evaluarLista = lista2[index]
+
+                    let valorDataId = $(evaluarLista).data('id')
+
+                    if (respuesta === valorDataId) {
+                        arrayVerdaderos2.push(respuesta);
+                    }
+
+                }
+
+
+                if (arrayVerdaderos.length === arrayOpcionesCorrectas.length && arrayVerdaderos2.length === arrayOpcionesCorrectas2.length) {
+                    swal({
+                        title: "Exito.",
+                        text: "Respuesta correcta",
+                        icon: "success"
+                    });
+                } else {
+                    swal({
+                        title: "Error.",
+                        text: "Respuesta incorrecta",
+                        icon: "error"
+                    });
+                }
+            } else {
+                swal({
+                    title: "Error.",
+                    text: "las dos listas tienen que contener la misma cantidad de elemntos",
+                    icon: "error"
+                });
+            }
+        }
+
+
+        let multiDragDemo = document.getElementById('list');
+
+        let move = new Sortable(multiDragDemo, {
+            filter: '.filtered',
+            multiDrag: true, // Enable multi-drag
+            selectedClass: 'selected', // The class applied to the selected items
+            fallbackTolerance: 3, // So that we can select items on mobile
+            animation: 150,
+            group: 'shared'
+
+        });
+        let multiDragDemo2 = document.getElementById('list2');
+
+        let move2 = new Sortable(multiDragDemo2, {
+            filter: '.filtered',
+            multiDrag: true, // Enable multi-drag
+            selectedClass: 'selected', // The class applied to the selected items
+            fallbackTolerance: 3, // So that we can select items on mobile
+            animation: 150,
+            group: 'shared'
+        });
+
+    </script>
+
+
+
+
+</body>
+
+</html>

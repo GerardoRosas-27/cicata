@@ -1,0 +1,65 @@
+
+
+/* Completar párrafos */
+
+
+.posiciones {
+    width: 179px;
+    height: 20px;
+    background: rgb(253, 250, 253);
+    padding: 15px 60px;
+    color: rgb(131, 131, 131);
+    border-radius: 5px;
+
+}
+
+.title-center {
+    text-align: center;
+
+}
+
+#list li {
+
+    background-color: rgba(163, 136, 178, 0.4);
+
+    padding: 30px;
+    text-align: justify;
+    color: black;
+    font-size: 16px;
+    margin: 3px 4px;
+    cursor: pointer;
+    border-radius: 3px;
+    width: 100% !important;
+
+}
+
+#list {
+    position: relative;;
+    list-style: none;
+    
+}
+
+aside.sidebar {
+    padding-left: 10%;
+}
+
+.contentbutton {
+    display: flex;
+    justify-content: center;
+}
+
+.blog h3 {
+    text-align: start;
+}
+
+.modern-button-a {
+    height: 48.39px;
+}
+
+.modern-button-a span {
+    position: relative;
+    top: -8px;
+}
+.contenido_p {
+    width: 100%;
+}

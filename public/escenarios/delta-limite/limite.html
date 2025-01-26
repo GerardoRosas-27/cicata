@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sucesiones convergentes</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css"
+    />
+
+    <!--MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async=""
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath:  [['$','$'],['\\(','\\)']]}});
+    </script>
+
+    <!--JSXgraph -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/1.2.0/jsxgraphcore.js"></script>
+  </head>
+
+  <body>
+    <h1><b> Límite de una función</b></h1>
+
+    <p>
+      Este escenario tiene el propósito de mostrar de manera intuiva el concepto de límite de la función \( f(x)=x^2+1 \) en los puntos \( x = 1, x = 1.5\) y \(x = 2 \). 
+    </p>
+    
+
+    <h4 class="text-left">
+      Elige el valor del punto en donde quieres analizar el límite
+    </h4>
+
+    <div>
+      <label for="inputPunto"> \(x= \) </label>
+
+      <!--  <input onchange="creaPunto()" type="number" id="inputPunto" placeholder="Punto a analizar" > -->
+
+      <input type="text" id="inputPunto" placeholder="Punto a analizar" />
+
+      <button onclick="validarPunto_x()">Validar el punto x</button>
+    </div>
+
+    <h4 class="text-left">Elige el valor del límite</h4>
+
+    <div>
+      <label for="inputLimite"
+        >Ingresa el límite de la función: \( l = \)</label
+      >
+      <input
+        type="number"
+        id="inputLimite"
+        value=" "
+        min="0"
+        max="8"
+        step="0.1"
+      />
+      <button onclick="funcionLeerValor()">Validar el valor del límite</button>
+    </div>
+
+    <h4 class="text-left">Elige un valor para épsilon</h4>
+    <div>
+      <p>
+        Dada, \( \varepsilon = \)
+        <input
+          onchange="changeEpsilon()"
+          type="number"
+          class="form-control w-50"
+          id="inputEpsilon"
+          value=" "
+          min="0"
+          max="1"
+          step="0.01"
+        />
+      <br/>
+      <br/>
+        Encuentra una vecindad de radio \( \delta \) tal que para toda \( x \in (
+        a,b )\) se satisface que, las imágenes de esta vecindad se meten a la vecindad de radio \( \varepsilon \).
+      </p>
+
+      <!-- <p>
+        \( \vert \frac{n}{n+1}-1 \vert \lt \)
+        <span id="epsilonChange1"> \( \varepsilon \) </span>
+      </p> -->
+
+      
+
+      <label for="inputVerificaDelta">Sea \( \delta = \) </label>
+      <input
+        onchange="changeDelta()"
+        type="number"
+        class="form-control w-50"
+        id="inputDelta"
+        value=" "
+        min="0"
+        max="3"
+        step="0.01"
+      />
+
+  
+      <br />
+      <br />
+    </div>
+
+    <div
+      id="edvi"
+      style="
+        width: 650px;
+        height: 400px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      "
+    ></div>
+
+    <div>
+      <!--  <button onclick="ejecutarSucesion()" (click)="expression">Ejecutar Sucesión</button>  -->
+      <br />
+      <button id="boton" onclick="reload()">Puntos Aleatorios</button>
+      <br />
+      <br />
+      <button id="nuevadelta" onclick="nuevaDelta()">Nueva vecindad</button>
+
+    </div>
+
+    <br />
+
+    <div>
+      <a class="custom-button" href="./limite.html">reinicio</a>
+    </div>
+
+
+<!--------------------------- *********** Formulario dinámico ************* --------------------->
+
+
+
+    <section class="contenedor2">
+      <!--   <hr>   -->
+
+      <h3 class="centrar-texto">Responde el cuestionario</h3>
+      <form id="formMultipleDinamico"></form>
+
+      <br />
+      <br />
+
+      <div class="button-container">
+        <button
+          data-pregunta="1"
+          onclick="preguntaSiguente(this)"
+          class="modern-button modern-button:hover"
+        >
+          Siguiente
+        </button>
+
+        <button
+          class="modern-button modern-button:hover"
+          onclick="validarForm()"
+        >
+          Validar
+        </button>
+      </div>
+    </section>
+
+    <section class="contenedor2">
+      <h3 class="centrar-texto">Respuestas</h3>
+
+      <h1>Cuestionario de Opción Múltiple</h1>
+
+      <div id="pregunta1">
+        <h3>Pregunta 1: ¿Cuál es la capital de Francia?</h3>
+        <input type="radio" name="q1" value="a" /> a) Madrid<br />
+        <input type="radio" name="q1" value="b" /> b) Berlín<br />
+        <input type="radio" name="q1" value="c" /> c) París<br />
+        <input type="radio" name="q1" value="d" /> d) Roma<br />
+      </div>
+
+      <div id="pregunta2">
+        <h3>Pregunta 2: ¿Cuál es el río más largo del mundo?</h3>
+        <input type="radio" name="q2" value="a" /> a) Amazonas<br />
+        <input type="radio" name="q2" value="b" /> b) Nilo<br />
+        <input type="radio" name="q2" value="c" /> c) Misisipi<br />
+        <input type="radio" name="q2" value="d" /> d) Danubio<br />
+      </div>
+
+      <div id="pregunta3">
+        <h3>Pregunta 3: ¿Cuál es el planeta más grande del sistema solar?</h3>
+        <input type="radio" name="q3" value="a" /> a) Venus<br />
+        <input type="radio" name="q3" value="b" /> b) Júpiter<br />
+        <input type="radio" name="q3" value="c" /> c) Marte<br />
+        <input type="radio" name="q3" value="d" /> d) Saturno<br />
+      </div>
+
+      <br />
+
+      <button onclick="calificarCuestionario()">Calificar</button>
+      <a href="limite.html">Volver</a>
+
+      <p>Puntuación: <span id="puntuacion"></span></p>
+
+
+    </section>
+
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+      integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!--MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async=""
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath:  [['$','$'],['\\(','\\)']]}});
+    </script>
+
+    <script type="text/javascript" language="javascript" src="js/limite.js"></script>
+    <script src="js/dinamico.js"></script>
+    <script src="js/cuestionarioSimple.js"></script>
+  </body>
+</html>

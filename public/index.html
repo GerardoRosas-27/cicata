@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Proyecto Posdoctoral</title>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/11.2.0/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/11.2.0/firebase-auth-compat.js"></script>
+    <script
+      defer
+      src="/__/firebase/11.2.0/firebase-database-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/11.2.0/firebase-firestore-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/11.2.0/firebase-functions-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/11.2.0/firebase-messaging-compat.js"
+    ></script>
+    <script defer src="/__/firebase/11.2.0/firebase-storage-compat.js"></script>
+    <script
+      defer
+      src="/__/firebase/11.2.0/firebase-analytics-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/11.2.0/firebase-remote-config-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/11.2.0/firebase-performance-compat.js"
+    ></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+  <link rel="stylesheet" href="./stilos.css">
+  </head>
+  <body>
+    <header class="banner">
+      <h1>Proyecto Posdoctoral</h1>
+    </header>
+
+    <main class="content">
+      <h2>Escenarios</h2>
+      <ul class="links">
+        <li>
+          <a
+            href="https://proyecto-posdoctoral.web.app/escenarios/abscisas/abscisas2.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+          abscisas2
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://proyecto-posdoctoral.web.app/escenarios/tvm/tvm.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            TVM
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://proyecto-posdoctoral.web.app/escenarios/curva-bezier/curvabezier.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Curva Bezier
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="https://proyecto-posdoctoral.web.app/escenarios/cuestionarios-sortable/cuestionario1.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+          cuestionario1
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://proyecto-posdoctoral.web.app/escenarios/cuestionarios-sortable/cuestionario3.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+          cuestionario3
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://proyecto-posdoctoral.web.app/escenarios/cuestionarios-sortable/cuestionario4.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+          cuestionario4
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://proyecto-posdoctoral.web.app/escenarios/delta-limite/limite.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+          delta limite
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://proyecto-posdoctoral.web.app/escenarios/deslizador-delta-en-canvas/limite-deslizador.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+          limite deslizador
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://proyecto-posdoctoral.web.app/escenarios/diduja-delta/limite.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+          DIBUJA DELTA
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://proyecto-posdoctoral.web.app/escenarios/diduja-delta/limite1.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+          DIBUJA DELTA 1
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://proyecto-posdoctoral.web.app/escenarios/epsilon-delta/limite_deslizador.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+          EPSILON DELTA
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://proyecto-posdoctoral.web.app/escenarios/epsilon-delta/limite_input.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+          EPSILON DELTA INPUT
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://proyecto-posdoctoral.web.app/escenarios/funcion-negativa-deslizadores/negativo.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+          EFUNCION NEGATIVA
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://proyecto-posdoctoral.web.app/escenarios/sucesion-convergente-revisado/criterio_conv-eje-x.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+          criterio conv eje x
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://proyecto-posdoctoral.web.app/escenarios/sucesion-convergente-revisado/criterio_conv.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+          criterio_conv
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://proyecto-posdoctoral.web.app/escenarios/sucesion-convergente-revisado/sucesion_conv.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+          sucesion_conv
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://proyecto-posdoctoral.web.app/escenarios/sucesion-convergente-revisado/sucesion_conv2.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+          sucesion_conv2
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://proyecto-posdoctoral.web.app/escenarios/sucesion-convergente-revisado/sucesion_conv3.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+          sucesion_conv3
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="https://proyecto-posdoctoral.web.app/escenarios/tabla-de-erificacion/tablaVerificacion.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+          tablaVerificacion
+          </a>
+        </li>
+      </ul>
+    </main>
+
+    <footer class="footer">
+      <p>
+        &copy; 2025 <a href="https://proyecto-posdoctoral.web.app">Proyecto
+        Posdoctoral</a>
+      </p>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const loadEl = document.querySelector("#load");
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.firestore().doc('/foo/bar').get().then(() => { });
+        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        // firebase.analytics(); // call to activate
+        // firebase.analytics().logEvent('tutorial_completed');
+        // firebase.performance(); // call to activate
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+        try {
+          let app = firebase.app();
+          let features = [
+            "auth",
+            "database",
+            "firestore",
+            "functions",
+            "messaging",
+            "storage",
+            "analytics",
+            "remoteConfig",
+            "performance",
+          ].filter((feature) => typeof app[feature] === "function");
+          loadEl.textContent = `Firebase SDK loaded with ${features.join(
+            ", "
+          )}`;
+        } catch (e) {
+          console.error(e);
+          loadEl.textContent =
+            "Error loading the Firebase SDK, check the console.";
+        }
+      });
+    </script>
+  </body>
+</html>
