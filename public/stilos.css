@@ -8,7 +8,7 @@
   /* Estilo general del cuerpo */
   body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #ece5e5;
   }
   
   /* Sección de banner */
@@ -17,7 +17,7 @@
     background-image: url("ruta-de-la-imagen.jpg");
     background-size: cover;
     background-position: center;
-    color: #20e434;
+    color: #0e61cf;
     text-align: center;
     padding: 60px 0;
   }
